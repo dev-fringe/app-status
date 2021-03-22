@@ -3,6 +3,7 @@ package dev.fringe.app.config;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadPoolExecutor;
 
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +13,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 
-import dev.fringe.app.service.TestService;
+import dev.fringe.app.service.MarketService;
 
 
 @Configuration
@@ -20,7 +21,7 @@ public class SchedulerConfig implements InitializingBean{
 
 	@Value("${thread.pool.size:20}") int THREAD_POOL_SIZE;
 	@Value("${schedule.cron:* * * * * *}") String CRON_EXPRESSION;
-	@Autowired TestService testService;
+	@Autowired MarketService testService;
 	@Autowired TaskScheduler scheduler;
 	
 	@Bean

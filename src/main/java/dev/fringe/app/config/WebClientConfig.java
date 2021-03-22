@@ -14,7 +14,6 @@ import reactor.core.publisher.Mono;
 @Configuration
 @Log4j2
 public class WebClientConfig {
-
 	//'https://api.upbit.com/v1/market/all?isDetails=false
 	@Value("${app.baseurl:https://api.upbit.com/v1}") String baseUrl;
 
