@@ -10,8 +10,5 @@ import lombok.Data;
 @Embeddable
 public class BarsId implements Serializable{
 	private static final long serialVersionUID = 6364949544116724531L;
-	private String date;
-	private String name;
-	
-	
+	private String date,name;
 }

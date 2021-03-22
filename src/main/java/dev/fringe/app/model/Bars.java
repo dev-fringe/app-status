@@ -20,11 +20,8 @@ import lombok.ToString;
 @Entity
 @Table
 public class Bars implements Serializable{
-
 	private static final long serialVersionUID = 1746036454594292856L;
-
 	private String open,high,low,close,volume;
-
 	@Id private BarsId id;
 
 	@SneakyThrows

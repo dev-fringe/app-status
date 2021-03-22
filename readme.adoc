@@ -1,0 +1,23 @@
+http://dl.rasabourse.com/Books/Technical_Analysis/%5BRockefeller%5DTechnical%20Analysis%20For%20Dummies%2C%20Second%20Edition%20%28rasabourse.com%29.pdf
+
+nohup activator run &
+
+git checkout master
+git branch new-branch-to-save-current-commits
+git fetch --all
+git reset --hard origin/master
+
+
+java -classpath "/home/lee/app-status/target/dependency/*" org.h2.tools.Shell
+
+
+nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db1Server &
+java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db2TableCreate
+
+java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db3LoadMarketByWeb
+
+java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db7Scheduler
+
+java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.QuickstartWithUpBit
+
+
