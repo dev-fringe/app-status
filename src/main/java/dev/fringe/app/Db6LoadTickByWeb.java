@@ -1,9 +1,6 @@
 package dev.fringe.app;
 
-<<<<<<< HEAD
-=======
 import java.util.Arrays;
->>>>>>> 3a2d28f35c1803f9b96442bd8afe07f829ff2b5b
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -40,13 +37,9 @@ public class Db6LoadTickByWeb extends Support{
 	@Transactional
 	@SneakyThrows
 	public void run(String[] args) {
-<<<<<<< HEAD
 		List<String> markets = marketService.getAllmarket();
 //		List<String> markets = Arrays.asList("KRW-BTC");
-=======
 //		List<String> markets = marketService.getAllmarket();
-		List<String> markets = Arrays.asList("KRW-BTC");
->>>>>>> 3a2d28f35c1803f9b96442bd8afe07f829ff2b5b
 		for (String market : markets) {
 			Thread.sleep(350);
 			tickService.saveTickAndGetWebMarket(market, "200");
