@@ -1,6 +1,7 @@
 package dev.fringe.app.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -58,4 +59,7 @@ public interface DatabaseMapper {
 		+" 	 ASC " )
 	List<Ticks> selectTick(@Param("market") String market, @Param("count") String count);
 
+	
+	@Select("Select * FROM QUICKSTART")
+	List<Map> select();
 }
