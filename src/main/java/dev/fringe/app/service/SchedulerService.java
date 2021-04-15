@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import dev.fringe.app.String;
 import dev.fringe.app.model.Candles;
 import dev.fringe.app.model.CandlesId;
 import lombok.SneakyThrows;
