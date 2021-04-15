@@ -13,7 +13,7 @@ import dev.fringe.app.mapper.DatabaseMapper;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-@Import({HibernateConfig.class,WebClientConfig.class, SchedulerConfig.class})
+@Import({HibernateConfig.class,WebClientConfig.class})
 @ComponentScan("dev.fringe.app.service")
 public class Main implements InitializingBean {
 	@Autowired DatabaseMapper mapper;
