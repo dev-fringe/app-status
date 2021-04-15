@@ -25,6 +25,6 @@ public class Db0Shell {
      */	
 	@SneakyThrows
 	public static void main(String[] args) {
-		Shell.main("-url","jdbc:h2:tcp://localhost/~/test","-user","sa");		//jdbc:h2:./test  create database
+		Shell.main("-url","jdbc:h2:tcp://localhost/~/test","-user","sa","-password","sa");		//jdbc:h2:./test  create database
 	}
 }
