@@ -61,7 +61,7 @@ public class QuickStartService extends Support {
 	        System.out.println("First close price: " + new BigDecimal(firstClosePrice.doubleValue()));
 	        ClosePriceIndicator closePrice = new ClosePriceIndicator(series);
 	        SMAIndicator shortSma = new SMAIndicator(closePrice, 5);
-	        System.out.println("5-bars-SMA value at the 42nd index: " + new BigDecimal(shortSma.getValue(5).doubleValue()));
+//	        System.out.println("5-bars-SMA value at the 42nd index: " + new BigDecimal(shortSma.getValue(5).doubleValue()));
 	        SMAIndicator longSma = new SMAIndicator(closePrice, 30);
 	        Rule buyingRule = new CrossedUpIndicatorRule(shortSma, longSma).or(new CrossedDownIndicatorRule(closePrice, 50000));
 	        Rule sellingRule = new CrossedDownIndicatorRule(shortSma, longSma).or(new StopLossRule(closePrice, series.numOf(3))).or(new StopGainRule(closePrice, series.numOf(2)));
