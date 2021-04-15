@@ -57,17 +57,17 @@ public class TickService {
 	}
 	@Autowired DatabaseMapper mapper;
 	public List<Ticks> getTicksByMarketAndCount(String market, String count) {
-		List<Ticks> ticks = mapper.selectTick(market, count);
-//		Session session = sessionFactory.openSession();
-//		List<Ticks> ticks = null;
-//		try {
-//			session.getTransaction().begin();
-//			ticks = session.createQuery("select u from Ticks u where id.market = :name AND rownum <= :count ORDER BY u.timestamp ASC ", Ticks.class).setParameter("name",market).setParameter("count",count).list();
-//			session.getTransaction().commit();
-//		} catch (Exception e) {
-//			log.error(e.getMessage());
-//			session.getTransaction().rollback();
-//		}
+//		List<Ticks> ticks = mapper.selectTick(market, count);
+		Session session = sessionFactory.openSession();
+		List<Ticks> ticks = null;
+		try {
+			session.getTransaction().begin();
+			ticks = session.createQuery("select u from Ticks u where id.market = :name AND rownum <= :count ORDER BY u.timestamp ASC ", Ticks.class).setParameter("name",market).setParameter("count",count).list();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			session.getTransaction().rollback();
+		}
 		return ticks;
 	}
 	
