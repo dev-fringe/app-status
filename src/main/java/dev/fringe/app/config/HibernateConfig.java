@@ -38,7 +38,11 @@ public class HibernateConfig {
 		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("sa");
+<<<<<<< HEAD
 		dataSource.setMaxTotal(100000);
+=======
+		dataSource.setMaxTotal(1000);
+>>>>>>> 3a2d28f35c1803f9b96442bd8afe07f829ff2b5b
 		return dataSource;
 	}
 
