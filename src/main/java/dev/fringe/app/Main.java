@@ -21,7 +21,7 @@ public class Main implements InitializingBean {
 		new AnnotationConfigApplicationContext(Main.class);
 	}
 	public void afterPropertiesSet() throws Exception {
-		mapper.select().forEach(e -> System.out.println(e));
+		mapper.select2().forEach(e -> System.out.println(e));
 //		log.info("done");
 	}
 }

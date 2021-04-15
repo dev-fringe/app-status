@@ -61,5 +61,5 @@ public interface DatabaseMapper {
 
 	
 	@Select("Select * FROM QUICKSTART")
-	List<Map> select();
+	List<Map> select2();
 }
