@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import dev.fringe.app.String;
 import dev.fringe.app.model.Candles;
 import dev.fringe.app.model.CandlesId;
 import lombok.SneakyThrows;
@@ -58,7 +59,8 @@ public class SchedulerService {
 	
 	@SneakyThrows
 	public void tick() {
-		List<String> markets = Arrays.asList("KRW-BTC");
+		//List<String> markets = Arrays.asList("KRW-BTC");
+		List<String> markets = marketService.getAllmarket();
 		for (String market : markets) {
 			Thread.sleep(350);
 			tickService.saveTickAndGetWebMarket(market, "200");
