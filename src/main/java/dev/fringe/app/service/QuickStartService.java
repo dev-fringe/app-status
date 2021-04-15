@@ -48,8 +48,8 @@ public class QuickStartService extends Support {
 	
 	public void run() {
 		mapper.delete();
-//		List<String> markets = marketService.getAllmarket();
-		List<String> markets = Arrays.asList("KRW-BTC");
+		List<String> markets = marketService.getAllmarket();
+//		List<String> markets = Arrays.asList("KRW-BTC");
 		for (String market : markets) {
 			List<Ticks> l = service.getTicksByMarketAndCount(market, "100000");
 			List<String[]> a = new ArrayList<>();
