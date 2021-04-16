@@ -58,7 +58,6 @@ public class QuickStartService extends Support {
 			}
 	        BarSeries series = this.loadBitstampSeries(a, market);
 	        Num firstClosePrice = series.getBar(0).getClosePrice();
-	        System.out.println("First close price: " + new BigDecimal(firstClosePrice.doubleValue()));
 	        ClosePriceIndicator closePrice = new ClosePriceIndicator(series);
 	        SMAIndicator shortSma = new SMAIndicator(closePrice, 5);
 //	        System.out.println("5-bars-SMA value at the 42nd index: " + new BigDecimal(shortSma.getValue(5).doubleValue()));
@@ -67,14 +66,14 @@ public class QuickStartService extends Support {
 	        Rule sellingRule = new CrossedDownIndicatorRule(shortSma, longSma).or(new StopLossRule(closePrice, series.numOf(3))).or(new StopGainRule(closePrice, series.numOf(2)));
 	        BarSeriesManager seriesManager = new BarSeriesManager(series);
 	        TradingRecord tradingRecord = seriesManager.run(new BaseStrategy(buyingRule, sellingRule));
-	        System.out.println("Number of trades for our strategy: " + tradingRecord.getTradeCount());//우리의 전략에 대한 거래 수 
 	        AnalysisCriterion profitTradesRatio = new AverageProfitableTradesCriterion();//평균 수익성 거래 기준 수익성있는 거래 수 
-	        System.out.println("Profitable trades ratio: " + profitTradesRatio.calculate(series, tradingRecord));
 	        AnalysisCriterion rewardRiskRatio = new RewardRiskRatioCriterion();//보상 위험 비율 기준 (즉, 최대 감소에 대한 총 이익. 
-	        System.out.println("Reward-risk ratio: " + rewardRiskRatio.calculate(series, tradingRecord));
+	        System.out.print (" Reward-risk ratio: " + rewardRiskRatio.calculate(series, tradingRecord));
 	        AnalysisCriterion vsBuyAndHold = new VersusBuyAndHoldCriterion(new TotalProfitCriterion());
+	        System.out.print("  First close price: " + new BigDecimal(firstClosePrice.doubleValue()));
+	        System.out.print("  Number of trades for our strategy: " + tradingRecord.getTradeCount());//우리의 전략에 대한 거래 수 
+	        System.out.print("  Profitable trades ratio: " + profitTradesRatio.calculate(series, tradingRecord));
 	        System.out.println("Our profit vs buy-and-hold profit: " + vsBuyAndHold.calculate(series, tradingRecord));//우리의 이익 대 매수 및 보유 이익
-	        System.out.println(new BigDecimal(firstClosePrice.doubleValue()).toString());
 	        // Your turn!
 			Session session = sessionFactory.openSession();
 			try {
