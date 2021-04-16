@@ -1,6 +1,5 @@
 package dev.fringe.app.service;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -14,7 +13,6 @@ import dev.fringe.app.model.Candles;
 import dev.fringe.app.model.CandlesId;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
-import net.bytebuddy.asm.Advice.OffsetMapping.Target.AbstractReadOnlyAdapter;
 
 @Service
 @Log4j2

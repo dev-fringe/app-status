@@ -132,7 +132,7 @@ public class Support {
                 String[] tradeLine = lines.get(i);
                 ZonedDateTime tradeTimeStamp = ZonedDateTime
                         .ofInstant(Instant.ofEpochMilli(Long.parseLong(tradeLine[0]) * 1000), ZoneId.systemDefault());
-                System.out.println(tradeTimeStamp);
+//                System.out.println(tradeTimeStamp);
                 // if the trade happened during the bar
                 if (bar.inPeriod(tradeTimeStamp)) {
                     // add the trade to the bar
