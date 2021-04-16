@@ -68,7 +68,7 @@ public class QuickStartService extends Support {
 	        TradingRecord tradingRecord = seriesManager.run(new BaseStrategy(buyingRule, sellingRule));
 	        AnalysisCriterion profitTradesRatio = new AverageProfitableTradesCriterion();//평균 수익성 거래 기준 수익성있는 거래 수 
 	        AnalysisCriterion rewardRiskRatio = new RewardRiskRatioCriterion();//보상 위험 비율 기준 (즉, 최대 감소에 대한 총 이익. 
-	        System.out.print (" Reward-risk ratio: " + rewardRiskRatio.calculate(series, tradingRecord));
+	        System.out.print (market + " Reward-risk ratio: " + rewardRiskRatio.calculate(series, tradingRecord));
 	        AnalysisCriterion vsBuyAndHold = new VersusBuyAndHoldCriterion(new TotalProfitCriterion());
 	        System.out.print("  First close price: " + new BigDecimal(firstClosePrice.doubleValue()));
 	        System.out.print("  Number of trades for our strategy: " + tradingRecord.getTradeCount());//우리의 전략에 대한 거래 수 
