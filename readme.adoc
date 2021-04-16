@@ -22,3 +22,7 @@ java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/t
 
 
 java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Main
+
+
+*/10 * * * * nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db1Server &
+*/11 * * * * nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db7Scheduler &
