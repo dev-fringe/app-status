@@ -1,1 +1,1 @@
-java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.QuickstartWithUpBit
+java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db2TableCreate
