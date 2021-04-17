@@ -78,9 +78,9 @@ public class QuickStartService extends Support {
 			Session session = sessionFactory.openSession();
 			try {
 				session.getTransaction().begin();
-				session.save(new Quickstart(market,
-						"5-bars-SMA value at the 42nd index: " +new BigDecimal(firstClosePrice.doubleValue()).toString(),
-								 String.valueOf(tradingRecord.getTradeCount()),
+				session.save(   new Quickstart(market,
+						  		new BigDecimal(firstClosePrice.doubleValue()).toString(),
+								String.valueOf(tradingRecord.getTradeCount()),
 								profitTradesRatio.calculate(series, tradingRecord).toString(),
 								rewardRiskRatio.calculate(series, tradingRecord).toString(),
 								vsBuyAndHold.calculate(series, tradingRecord).toString(),

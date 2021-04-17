@@ -1,0 +1,2 @@
+nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db1Server &
+nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db7Scheduler &

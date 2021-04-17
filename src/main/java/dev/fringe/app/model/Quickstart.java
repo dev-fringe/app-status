@@ -2,6 +2,7 @@ package dev.fringe.app.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,21 +18,34 @@ public class Quickstart implements Serializable{
 	
 	@Id
 	private QuickstartId id;
+	@Column(name = "first_Close_Price")	
 	private String firstClosePrice;
-	private String valueAtIndex; //5-bars-SMA value at the 42nd index: 78331200
-	private String numberOfTradesForOurStrategy;
-	private String profitableTradesRatio;
-	private String OurProfitVsBuyAndHoldProfit;
+	@Column(name = "trade_Count")
+	private String tradeCount; 
+	@Column(name = "profit_Trades_Ratio")
+	private String profitTradesRatio;
+	@Column(name = "reward_Risk_Ratio")
+	private String rewardRiskRatio;
+	@Column(name = "vs_Buy_And_Hold")
+	private String vsBuyAndHold;
+	@Column(name= "bar_Count")
 	private String barCount;
-	public Quickstart(String market, String firstClosePrice, String valueAtIndex, String numberOfTradesForOurStrategy, String profitableTradesRatio, String OurProfitVsBuyAndHoldProfit, String barCount) {
+	
+	public Quickstart(String market, 
+			String firstClosePrice, 
+			String tradeCount, 
+			String profitTradesRatio, 
+			String rewardRiskRatio, 
+			String vsBuyAndHold, 
+			String barCount) {
 		if(id == null) {
 			id = new QuickstartId(market);
 		}
 		this.firstClosePrice = firstClosePrice;
-		this.valueAtIndex = valueAtIndex;
-		this.numberOfTradesForOurStrategy = numberOfTradesForOurStrategy;
-		this.profitableTradesRatio = profitableTradesRatio;
-		this.OurProfitVsBuyAndHoldProfit = OurProfitVsBuyAndHoldProfit;
+		this.tradeCount = tradeCount;
+		this.profitTradesRatio = profitTradesRatio;
+		this.rewardRiskRatio = rewardRiskRatio;
+		this.vsBuyAndHold = vsBuyAndHold;
 		this.barCount = barCount;
 	}
 
