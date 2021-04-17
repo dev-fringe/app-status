@@ -23,7 +23,7 @@ java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/t
 
 java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Main
 
-
+# azure 시간이 지나면 프로세스 종료 되어 버린다... 그래서 crontab 등록한다.
 */10 * * * * nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db1Server >/dev/null 2>&1
 */11 * * * * nohup java -classpath "/home/lee/app-status/target/dependency/*:/home/lee/app-status/target/*" dev.fringe.app.Db7Scheduler >/dev/null 2>&1
 */9 * * * * ps -eaf | grep java | grep -v grep | awk '{ print $2 }' | xargs kill -9
