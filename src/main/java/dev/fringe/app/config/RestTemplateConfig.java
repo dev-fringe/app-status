@@ -20,9 +20,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class RestTemplateConfig {
 	
-	@Value("${app.access.key:oBpIMdHiTCITDOL9iDlpiMMx7ypppi6Lcqglh6wo}")
+	@Value("${app.access.key:qXmSMObHB9DyMmab2HgZxwiJvKxsWmQcTn28mxBW}")
 	private String accessKey;
-	@Value("${app.secret.key:I62MxLxFar2OR8aP4HlOtVqUxd59YLAfsEq1Xewm}")
+	@Value("${app.secret.key:BlBtxhQ96UZWgx5WXvTIZvBcV7vPd1kClDEYatKF}")
 	private String secretKey;
 	
 
